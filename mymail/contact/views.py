@@ -33,7 +33,7 @@ def contact(request):
             #print(body["country"])
             message = "\n".join(body.values())
             try:
-                send_mail(subject, message, 'yagneshnayi7@gmail.com', ['yagneshnayi7@gmail.com']) 
+                send_mail(subject, message, '', ['']) 
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect ("thanks")
