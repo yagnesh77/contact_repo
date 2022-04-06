@@ -19,18 +19,15 @@ def contact(request):
 
             form.save()
             subject = 'hello yagnesh'
-            #import pdb;pdb.set_trace() 
             body = {
             'name': form.cleaned_data['name'], 
             'email': form.cleaned_data['email'], 
             'company': form.cleaned_data['company'], 
             'designation':form.cleaned_data['designation'],
-            'mobile': form.cleaned_data['mobile'], 
-            'message': form.cleaned_data['message'],
-          
-            'country': str(form.cleaned_data['country']), #conver in to string for use object for foreginkey 
+             'mobile': form.cleaned_data['mobile'], 
+            'message': form.cleaned_data['message'], 
+            #  'country': form.cleaned_data['country'], 
              }
-            #print(body["country"])
             message = "\n".join(body.values())
             try:
                 send_mail(subject, message, 'yagneshnayi7@gmail.com', ['yagneshnayi7@gmail.com']) 
